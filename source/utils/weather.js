@@ -9,7 +9,7 @@ const weather=(lat, log, callback) =>{
         callback('Unable to find Location', undefined)
     }
     else{
-     callback(undefined, body.weather[0].description + ' It is currently ' + body.main.temp + ' degree out')
+     callback(undefined, body.weather[0].description + ' It is currently ' + body.main.temp + ' degree out. This high today is ' + body.main.temp_max + ' with a low of ' + body.main.temp_min)
      //callback(undefined, response.body.weather[0].description + ' It is currently ' + response.body.main.temp + ' degree out')
     }
 })
