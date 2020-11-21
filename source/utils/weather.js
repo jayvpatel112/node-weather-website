@@ -1,7 +1,8 @@
 const request= require('request')
+const apikey= require('../../config')
 
 const weather=(lat, log, callback) =>{
-    const url='http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ log +'&units=metric&APPID=215921485602e18ac0781fa3a9c81752&lang=en'
+    const url='http://api.openweathermap.org/data/2.5/weather?lat='+ lat +'&lon='+ log +'&units=metric&APPID='+ apikey.configuration +'&lang=en'
     request({ url, json: true}, (error, {body}) => { //request({ url: url, json: true}, (error, response) => {
     if(error){
         callback('Unable to connect to weather API!', undefined)
